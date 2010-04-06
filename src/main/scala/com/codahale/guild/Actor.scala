@@ -55,18 +55,6 @@ abstract class Actor[M,R] extends ActorBehavior[M,R] with Callable[M, R] with Se
   def stop() = fiber.dispose()
 
   /**
-   * An abstract method which is called when the actor receives a message.
-   */
-  def onMessage(message: Any): Any
-  
-  /**
-   * An overridable method which is called when the actor first starts up.
-   */
-  def onStart {
-    
-  }
-
-  /**
    * Asynchronously sends a message to the actor.
    */
   def send(msg: M) {
